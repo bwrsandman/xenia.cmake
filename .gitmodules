@@ -1,0 +1,3 @@
+[submodule "xenia"]
+	path = xenia
+	url = https://github.com/xenia-project/xenia
