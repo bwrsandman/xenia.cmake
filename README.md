@@ -1,6 +1,6 @@
-xenia.cmake
+xenia.cmake (Linux test branch)
 ===================
-[![Build Status](https://travis-ci.org/bwrsandman/xenia.cmake.svg?branch=master)](https://travis-ci.org/bwrsandman/xenia.cmake)
+[![Build Status](https://travis-ci.org/bwrsandman/xenia.cmake.svg?branch=linux)](https://travis-ci.org/bwrsandman/xenia.cmake)
 
 This repo contains a bunch of cmake files that can be used to build xenia with CMake.
 

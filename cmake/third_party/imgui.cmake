@@ -16,7 +16,7 @@ if (TARGET ${NAME})
     return()
 endif ()
 
-set(${NAME}_SOURCES
+file(GLOB ${NAME}_SOURCES CONFIGURE_DEPENDS
   "${CMAKE_SOURCE_DIR}/${SUB_PATH}/${NAME}/imconfig.h"
   "${CMAKE_SOURCE_DIR}/${SUB_PATH}/${NAME}/imgui.cpp"
   "${CMAKE_SOURCE_DIR}/${SUB_PATH}/${NAME}/imgui.h"

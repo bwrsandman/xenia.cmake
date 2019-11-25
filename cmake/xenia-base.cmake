@@ -13,7 +13,7 @@ set(SUB_PATH xenia/base)
 
 match_platform_files(${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}" "*")
 list(FILTER ${NAME}_SOURCES EXCLUDE REGEX "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}/exception_handler_posix.cc")
-add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES})
+add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES} ${CMAKE_BINARY_DIR}/build/version.h)
 target_include_directories(${NAME}
   PRIVATE
     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
