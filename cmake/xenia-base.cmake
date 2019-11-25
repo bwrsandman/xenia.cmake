@@ -17,8 +17,8 @@ add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES})
 target_include_directories(${NAME}
   PRIVATE
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>
-    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party>
   PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party>
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/src>)
 if (UNIX)
   find_package(PkgConfig REQUIRED)
@@ -26,7 +26,8 @@ if (UNIX)
 
   # PUBLIC because base/platform_linux.h leaks gdk/gdkx.h
   target_include_directories(${NAME} PUBLIC ${GTK3_INCLUDE_DIRS})
-  target_link_directories(${NAME} PRIVATE ${GTK3_LIBRARY_DIRS})
+  link_directories(${GTK3_LIBRARY_DIRS}) # target_link_directories introduced in 3.13
+  # target_link_directories(${NAME} PRIVATE ${GTK3_LIBRARY_DIRS})
   target_link_libraries(${NAME} PRIVATE ${GTK3_LIBRARIES} rt)
   target_compile_options(${NAME} PRIVATE ${GTK3_CFLAGS_OTHER})
 endif()

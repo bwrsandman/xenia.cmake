@@ -28,6 +28,7 @@ target_include_directories(${NAME}
   PRIVATE
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/src>
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party/llvm/include>
   # PUBLIC because /cpu/cpu_flags.h leaks cpptoml include
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party>)

@@ -21,7 +21,7 @@ target_include_directories(${NAME}
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party>
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/src>)
 find_package(Vulkan REQUIRED)
-target_link_libraries(${NAME} PRIVATE xenia-ui xenia-ui-spirv Vulkan::Vulkan volk)
+target_link_libraries(${NAME} PRIVATE xenia-ui-spirv Vulkan::Vulkan volk PUBLIC xenia-ui)
 if(UNIX)
   find_package(X11 REQUIRED)
   target_include_directories(${NAME} PRIVATE ${X11_INCLUDE_DIR})

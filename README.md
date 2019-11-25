@@ -31,8 +31,8 @@ same name.
 
 Features
 -------------
-* No outside dependencies besides xenia, and CMake.
 * Tested on clion with clang 9 on linux.
+* Option to compile libraries as shared or static.
 * Compiles xenia, tests & apps.
 
 Does this work with latest xenia?

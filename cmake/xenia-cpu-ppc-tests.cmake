@@ -20,7 +20,7 @@ target_include_directories(${NAME}
   PRIVATE
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/src>)
-target_link_libraries(${NAME} PRIVATE xenia-cpu-backend-x64 xenia-core)
+target_link_libraries(${NAME} PRIVATE xenia-cpu-backend-x64 xenia-core xenia-base)
 set_target_properties(${NAME} PROPERTIES FOLDER "xenia/tests")
 
 enable_testing()

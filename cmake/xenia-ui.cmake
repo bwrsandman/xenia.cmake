@@ -18,5 +18,5 @@ target_include_directories(${NAME}
   PRIVATE
   $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>)
 # PUBLIC because of gdk header leak
-target_link_libraries(${NAME} PUBLIC xenia-base)
+target_link_libraries(${NAME} PUBLIC xenia-base imgui)
 set_target_properties(${NAME} PROPERTIES FOLDER "xenia")
