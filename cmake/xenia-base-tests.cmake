@@ -11,10 +11,11 @@
 set(NAME xenia-base-tests)
 set(SUB_PATH xenia/base/testing)
 
-file(GLOB ${NAME}_SOURCES CONFIGURE_DEPENDS "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}/*.cc")
+file(GLOB ${NAME}_SOURCES CONFIGURE_DEPENDS
+  "${CMAKE_SOURCE_DIR}/xenia/tools/build/src/test_suite_main.cc"
+  "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}/*.cc")
 
 add_executable(${NAME} ${${NAME}_SOURCES})
-target_compile_definitions(${NAME} PRIVATE CATCH_CONFIG_MAIN)
 target_include_directories(${NAME} PRIVATE $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>)
 target_link_libraries(${NAME} PRIVATE xenia-base)
 set_target_properties(${NAME} PROPERTIES FOLDER "xenia/tests")

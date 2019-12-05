@@ -15,7 +15,6 @@ list(APPEND ${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}/add_test.
 list(APPEND ${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}/sandbox_main.cc")
 
 add_executable(${NAME} ${${NAME}_SOURCES})
-target_compile_definitions(${NAME} PRIVATE CATCH_CONFIG_MAIN)
 target_include_directories(${NAME}
   PRIVATE
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>

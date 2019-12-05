@@ -15,7 +15,6 @@ list(APPEND ${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}/ppc_testi
 list(APPEND ${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/xenia/base/main${PLATFORM_SUFFIX}.cc")
 
 add_executable(${NAME} ${${NAME}_SOURCES})
-target_compile_definitions(${NAME} PRIVATE CATCH_CONFIG_MAIN)
 target_include_directories(${NAME}
   PRIVATE
     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
