@@ -17,6 +17,7 @@ list(APPEND ${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/xenia/base/main${PLAT
 add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES})
 target_include_directories(${NAME}
   PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party>
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/src>)
 target_link_libraries(${NAME} PRIVATE xenia-vfs)

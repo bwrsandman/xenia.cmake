@@ -16,6 +16,7 @@ list(FILTER ${NAME}_SOURCES EXCLUDE REGEX "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_P
 add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES})
 target_include_directories(${NAME}
   PRIVATE
+    $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party>
