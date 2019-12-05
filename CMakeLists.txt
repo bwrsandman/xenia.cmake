@@ -96,3 +96,10 @@ include(cmake/third_party/spirv-tools.cmake)
 include(cmake/third_party/volk.cmake)
 include(cmake/third_party/xxhash.cmake)
 include(cmake/third_party/yaml-cpp.cmake)
+
+# Specific to linux wip branch
+include(cmake/xenia-hid-sdlpad.cmake)
+target_link_libraries(xenia
+  PRIVATE
+    xenia-hid-sdlpad
+)

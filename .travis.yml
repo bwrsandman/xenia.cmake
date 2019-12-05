@@ -14,6 +14,7 @@ matrix:
           - llvm-7-dev
           - libiberty-dev
           - libunwind-dev
+          - libsdl2-dev
     compiler: clang
     env:
      - CMAKE_FLAGS="-DXENIA_LINK_SHARED=OFF -DPython3_EXECUTABLE=/usr/bin/python3"
@@ -29,6 +30,7 @@ matrix:
           - llvm-7-dev
           - libiberty-dev
           - libunwind-dev
+          - libsdl2-dev
     compiler: clang
     env:
      - CMAKE_FLAGS="-DXENIA_LINK_SHARED=ON -DPython3_EXECUTABLE=/usr/bin/python3"

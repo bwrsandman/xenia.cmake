@@ -27,6 +27,7 @@ target_link_libraries(${NAME}
     imgui
     volk
     xenia-hid-nop
+    xenia-hid-sdlpad
     xenia-ui-vulkan)
 if (WIN32)
   target_link_libraries(${NAME}
