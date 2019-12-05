@@ -12,6 +12,8 @@ matrix:
           - libgtk-3-dev
           - libvulkan-dev
           - llvm-7-dev
+          - libiberty-dev
+          - libunwind-dev
     compiler: clang
     env:
      - CMAKE_FLAGS="-DXENIA_LINK_SHARED=OFF -DPython3_EXECUTABLE=/usr/bin/python3"
@@ -25,6 +27,8 @@ matrix:
           - libgtk-3-dev
           - libvulkan-dev
           - llvm-7-dev
+          - libiberty-dev
+          - libunwind-dev
     compiler: clang
     env:
      - CMAKE_FLAGS="-DXENIA_LINK_SHARED=ON -DPython3_EXECUTABLE=/usr/bin/python3"

@@ -24,6 +24,10 @@ add_library(${NAME} ${LIBRARY_TYPE}
   ${${NAME}_COMPILER_PASSES_SOURCES}
   ${${NAME}_HIR_SOURCES}
   ${${NAME}_PPC_SOURCES})
+if (UNIX)
+  find_library(IBERTY_LIBRARY iberty REQUIRED)
+  find_library(UNWIND_LIBRARY unwind REQUIRED)
+endif()
 target_include_directories(${NAME}
   PRIVATE
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/src>
@@ -34,5 +38,5 @@ target_include_directories(${NAME}
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party>)
 find_package(LLVM REQUIRED CONFIG)
 llvm_map_components_to_libnames(llvm_libs support)
-target_link_libraries(${NAME} PRIVATE mspack ${llvm_libs})
+target_link_libraries(${NAME} PRIVATE mspack ${llvm_libs} ${IBERTY_LIBRARY} ${UNWIND_LIBRARY})
 set_target_properties(${NAME} PROPERTIES FOLDER "xenia")
