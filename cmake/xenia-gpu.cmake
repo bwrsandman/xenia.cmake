@@ -13,7 +13,7 @@ set(SUB_PATH xenia/gpu)
 
 match_platform_files(${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}" "*")
 list(FILTER ${NAME}_SOURCES EXCLUDE REGEX ".*trace_viewer.cc$")
-add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES} ${CMAKE_BINARY_DIR}/build/version.h)
+add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES})
 target_include_directories(${NAME}
   PRIVATE
     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>

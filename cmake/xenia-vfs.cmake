@@ -14,7 +14,7 @@ set(SUB_PATH xenia/vfs)
 match_platform_files(${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}" "*")
 match_platform_files(${NAME}_DEVICES_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}/devices" "*")
 list(FILTER ${NAME}_SOURCES EXCLUDE REGEX ".*vfs_dump.cc$")
-add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES} ${${NAME}_DEVICES_SOURCES} ${CMAKE_BINARY_DIR}/build/version.h)
+add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES} ${${NAME}_DEVICES_SOURCES})
 target_include_directories(${NAME}
   PRIVATE
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/src>)

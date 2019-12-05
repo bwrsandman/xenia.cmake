@@ -44,6 +44,7 @@ function(match_platform_files list_name base_path base_match)
   list(FILTER SOURCES EXCLUDE REGEX "${base_path}/.*_win.cc$")
 
   list(APPEND SOURCES ${PLATFORM_FILES})
+  list(APPEND SOURCES "${CMAKE_BINARY_DIR}/build/version.h")
 
   set(${list_name} ${SOURCES} PARENT_SCOPE)
 endfunction()

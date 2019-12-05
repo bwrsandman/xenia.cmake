@@ -15,7 +15,6 @@ match_platform_files(${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}"
 list(APPEND ${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}/xenia_main.cc")
 list(APPEND ${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/xenia/base/main_init${PLATFORM_SUFFIX}.cc")
 list(APPEND ${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/xenia/base/main${PLATFORM_SUFFIX}.cc")
-list(APPEND ${NAME}_SOURCES "${CMAKE_BINARY_DIR}/build/version.h")
 
 add_executable(${NAME} ${${NAME}_SOURCES})
 target_compile_definitions(${NAME} PRIVATE XBYAK_NO_OP_NAMES XBYAK_ENABLE_OMITTED_OPERAND)
