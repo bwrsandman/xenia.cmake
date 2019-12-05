@@ -19,5 +19,5 @@ target_include_directories(${NAME}
   # PUBLIC because audio_system.h leaks cpu/processor.h which leaks cpptoml
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party>)
-target_link_libraries(${NAME} PRIVATE xenia-base libavcodec)
+target_link_libraries(${NAME} PUBLIC xenia-base PRIVATE libavcodec)
 set_target_properties(${NAME} PROPERTIES FOLDER "xenia")
