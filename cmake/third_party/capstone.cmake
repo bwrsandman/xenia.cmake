@@ -36,7 +36,6 @@ file(GLOB ${NAME}_SOURCES CONFIGURE_DEPENDS
   ${CMAKE_SOURCE_DIR}/${SUB_PATH}/${NAME}/arch/X86/*.c
   ${CMAKE_SOURCE_DIR}/${SUB_PATH}/${NAME}/arch/X86/*.h
   ${CMAKE_SOURCE_DIR}/${SUB_PATH}/${NAME}/arch/X86/*.inc)
-message(${${NAME}_SOURCES})
 add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES})
 
 target_compile_definitions(${NAME}
