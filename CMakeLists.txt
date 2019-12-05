@@ -99,7 +99,9 @@ include(cmake/third_party/yaml-cpp.cmake)
 
 # Specific to linux wip branch
 include(cmake/xenia-hid-sdlpad.cmake)
+include(cmake/xenia-apu-sdl.cmake)
 target_link_libraries(xenia
   PRIVATE
     xenia-hid-sdlpad
+    xenia-apu-sdl
 )
