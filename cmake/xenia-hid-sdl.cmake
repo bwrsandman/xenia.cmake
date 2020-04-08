@@ -8,8 +8,8 @@
 # You should have received a copy of the CC0 Public Domain Dedication along with
 # this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-set(NAME xenia-hid-sdlpad)
-set(SUB_PATH xenia/hid/sdlpad)
+set(NAME xenia-hid-sdl)
+set(SUB_PATH xenia/hid/sdl)
 
 find_package(SDL2 REQUIRED)
 
@@ -19,8 +19,8 @@ target_include_directories(${NAME} PRIVATE $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}
 target_link_libraries(${NAME}
   PUBLIC
     xenia-hid
+    SDL2::SDL2 # leak by sdl_input_driver.h
   PRIVATE
-    ${SDL2_LIBRARIES}
     xenia-ui
 )
 set_target_properties(${NAME} PROPERTIES FOLDER "xenia")

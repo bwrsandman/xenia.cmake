@@ -18,13 +18,14 @@ target_include_directories(${NAME}
   PRIVATE
     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/src>
-    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>
-  # Header leak from cpu/processor.h of cpptoml/include/cpptoml.h
   PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>
+    # Header leak from cpu/processor.h of cpptoml/include/cpptoml.h
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party>)
 target_link_libraries(${NAME}
   PRIVATE
     dxbc
+    fmt
     glslang-spirv
     snappy
     spirv-tools

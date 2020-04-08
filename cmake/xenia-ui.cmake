@@ -15,8 +15,8 @@ match_platform_files(${NAME}_SOURCES "${CMAKE_SOURCE_DIR}/xenia/src/${SUB_PATH}"
 list(FILTER ${NAME}_SOURCES EXCLUDE REGEX "${base_path}/.*_demo.cc$")
 add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES})
 target_include_directories(${NAME}
-  PRIVATE
+  PUBLIC
   $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>)
 # PUBLIC because of gdk header leak
-target_link_libraries(${NAME} PUBLIC xenia-base imgui)
+target_link_libraries(${NAME} PUBLIC xenia-base fmt imgui)
 set_target_properties(${NAME} PROPERTIES FOLDER "xenia")

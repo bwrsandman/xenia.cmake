@@ -27,8 +27,10 @@ set(${NAME}_SOURCES
   "${CMAKE_SOURCE_DIR}/${SUB_PATH}/${NAME}/system.h")
 
 add_library(${NAME} ${LIBRARY_TYPE} ${${NAME}_SOURCES})
-target_include_directories(${NAME} PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/${SUB_PATH}/${NAME}>)
+target_include_directories(${NAME}
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/${SUB_PATH}/${NAME}>)
 target_link_libraries(${NAME} PRIVATE xenia-base)
 target_compile_definitions(${NAME} PRIVATE HAVE_CONFIG_H)
 set_target_properties(${NAME} PROPERTIES FOLDER "${SUB_PATH}")

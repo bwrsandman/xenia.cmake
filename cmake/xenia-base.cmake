@@ -20,7 +20,8 @@ target_include_directories(${NAME}
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>
   PUBLIC
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party>
-    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/src>)
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/src>
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia)
 if (UNIX)
   find_package(PkgConfig REQUIRED)
   pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
@@ -33,5 +34,5 @@ if (UNIX)
   target_compile_options(${NAME} PRIVATE ${GTK3_CFLAGS_OTHER})
 endif()
 find_package(Threads)
-target_link_libraries(${NAME} PRIVATE cpptoml Threads::Threads)
+target_link_libraries(${NAME} PRIVATE fmt cpptoml Threads::Threads)
 set_target_properties(${NAME} PROPERTIES FOLDER "xenia")

@@ -30,6 +30,7 @@ target_include_directories(${NAME}
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia>)
 target_link_libraries(${NAME}
   PRIVATE
+    fmt
     imgui
     aes_128
     xenia-apu

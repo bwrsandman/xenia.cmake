@@ -20,7 +20,7 @@ target_link_libraries(${NAME}
   PUBLIC
     xenia-apu
   PRIVATE
+    SDL2::SDL2
     xenia-core # leak from memory.h
-    ${SDL2_LIBRARIES}
 )
 set_target_properties(${NAME} PROPERTIES FOLDER "xenia")

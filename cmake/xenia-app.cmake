@@ -26,6 +26,7 @@ target_link_libraries(${NAME}
     PRIVATE
       xenia-app-discord
       xenia-apu-nop
+      xenia-apu-sdl
       xenia-core
       xenia-cpu-backend-x64
       xenia-debug-ui
@@ -33,6 +34,7 @@ target_link_libraries(${NAME}
       xenia-gpu-vk
       xenia-gpu-vulkan
       xenia-hid-nop
+      xenia-hid-sdl
       xenia-kernel
       xenia-ui-spirv
       xenia-ui-vk

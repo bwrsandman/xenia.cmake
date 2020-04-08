@@ -11,8 +11,8 @@
 cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 project(xenia)
 
-set_property(GLOBAL PROPERTY CMAKE_CXX_STANDARD 17)
-set_property(GLOBAL PROPERTY CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(XENIA_LINK_SHARED "Link libraries as shared instead of static" OFF)
 
@@ -41,6 +41,7 @@ include(cmake/xenia-app.cmake)
 include(cmake/xenia-app-discord.cmake)
 include(cmake/xenia-apu.cmake)
 include(cmake/xenia-apu-nop.cmake)
+include(cmake/xenia-apu-sdl.cmake)
 include(cmake/xenia-base.cmake)
 if (NOT XENIA_LINK_SHARED)  # No defined entry point
   include(cmake/xenia-base-tests.cmake)
@@ -54,6 +55,7 @@ include(cmake/xenia-debug-ui.cmake)
 include(cmake/xenia-hid.cmake)
 include(cmake/xenia-hid-demo.cmake)
 include(cmake/xenia-hid-nop.cmake)
+include(cmake/xenia-hid-sdl.cmake)
 include(cmake/xenia-kernel.cmake)
 include(cmake/xenia-gpu.cmake)
 include(cmake/xenia-gpu-shader-compiler.cmake)
@@ -95,13 +97,3 @@ include(cmake/third_party/snappy.cmake)
 include(cmake/third_party/spirv-tools.cmake)
 include(cmake/third_party/volk.cmake)
 include(cmake/third_party/xxhash.cmake)
-include(cmake/third_party/yaml-cpp.cmake)
-
-# Specific to linux wip branch
-include(cmake/xenia-hid-sdlpad.cmake)
-include(cmake/xenia-apu-sdl.cmake)
-target_link_libraries(xenia
-  PRIVATE
-    xenia-hid-sdlpad
-    xenia-apu-sdl
-)

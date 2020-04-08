@@ -38,5 +38,5 @@ target_include_directories(${NAME}
     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/xenia/third_party>)
 find_package(LLVM REQUIRED CONFIG)
 llvm_map_components_to_libnames(llvm_libs support)
-target_link_libraries(${NAME} PRIVATE mspack ${llvm_libs} ${IBERTY_LIBRARY} ${UNWIND_LIBRARY})
+target_link_libraries(${NAME} PRIVATE fmt mspack ${llvm_libs} ${IBERTY_LIBRARY} ${UNWIND_LIBRARY})
 set_target_properties(${NAME} PROPERTIES FOLDER "xenia")
