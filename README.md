@@ -1,3 +1,6 @@
+# Archived since Xenia now has some support for CMake using xb devenv
+
+
 xenia.cmake (Linux test branch)
 ===================
 [![Build Status](https://travis-ci.org/bwrsandman/xenia.cmake.svg?branch=linux)](https://travis-ci.org/bwrsandman/xenia.cmake)
