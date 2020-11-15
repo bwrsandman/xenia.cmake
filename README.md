@@ -1,3 +1,5 @@
+# Archived since Xenia now has some support for CMake using xb devenv
+
 xenia.cmake
 ===================
 [![Build Status](https://travis-ci.org/bwrsandman/xenia.cmake.svg?branch=master)](https://travis-ci.org/bwrsandman/xenia.cmake)
